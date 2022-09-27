@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3cde7b1d-b7ac-4fba-aa53-4cc8d69af2aa" name="Deepak Prakash@DESKTOP-EAIV8GK 2022-09-17 15:38:52" runUser="DESKTOP-EAIV8GK\Deepak Prakash" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-09-17T15:38:52.3485463-05:00" queuing="2022-09-17T15:38:52.3485466-05:00" start="2022-09-17T15:38:44.7053186-05:00" finish="2022-09-17T15:38:52.3566256-05:00" />
+  <TestSettings name="default" id="987437f8-01ab-4ffb-8e22-e1523b56274e">
+    <Deployment runDeploymentRoot="Deepak_Prakash_DESKTOP-EAIV8GK_2022-09-17_15_38_52" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1c2c0d8c-2d2e-4859-b336-6d312a6df720" testId="ba55b7ae-4204-03e9-cbd0-689f5988d02e" testName="NethereumPOC.UnitTest1.ShouldBeAbleToDeployContract" computerName="DESKTOP-EAIV8GK" duration="00:00:06.1236882" startTime="2022-09-17T15:38:52.2531506-05:00" endTime="2022-09-17T15:38:52.2531677-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c2c0d8c-2d2e-4859-b336-6d312a6df720" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="NethereumPOC.UnitTest1.ShouldBeAbleToDeployContract" storage="c:\users\deepak prakash\source\repos\nethereumpoc\nethereumpoc\bin\debug\net6.0\nethereumpoc.dll" id="ba55b7ae-4204-03e9-cbd0-689f5988d02e">
+      <Execution id="1c2c0d8c-2d2e-4859-b336-6d312a6df720" />
+      <TestMethod codeBase="C:\Users\Deepak Prakash\source\repos\NethereumPOC\NethereumPOC\bin\Debug\net6.0\NethereumPOC.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NethereumPOC.UnitTest1" name="ShouldBeAbleToDeployContract" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ba55b7ae-4204-03e9-cbd0-689f5988d02e" executionId="1c2c0d8c-2d2e-4859-b336-6d312a6df720" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET 6.0.8)&#xD;
+[xUnit.net 00:00:00.72]   Discovering: NethereumPOC&#xD;
+[xUnit.net 00:00:00.76]   Discovered:  NethereumPOC&#xD;
+[xUnit.net 00:00:00.76]   Starting:    NethereumPOC&#xD;
+[xUnit.net 00:00:06.97]   Finished:    NethereumPOC&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

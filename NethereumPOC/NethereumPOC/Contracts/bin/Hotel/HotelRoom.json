@@ -1,0 +1,1319 @@
+{
+    "contractName": "HotelRoom",
+    "abi": [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_occupant",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Occupy",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "bookRoom",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "currentStatus",
+            "outputs": [
+                {
+                    "internalType": "enum HotelRoom.Statuses",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_occupant\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Occupy\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"bookRoom\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentStatus\",\"outputs\":[{\"internalType\":\"enum HotelRoom.Statuses\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/Deepak Prakash/source/repos/CSE6324-Smart-Contracts/NethereumPOC/NethereumPOC/Contracts/Hotel/hotelBooking.sol\":\"HotelRoom\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/Deepak Prakash/source/repos/CSE6324-Smart-Contracts/NethereumPOC/NethereumPOC/Contracts/Hotel/hotelBooking.sol\":{\"keccak256\":\"0xf2551dc7f98e218ae1f20bb4d2a67b27331ab337f650054e5e223d3e2b3e0917\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7d0b0358c66d4ebcf2213aefabe0be033b18786d3cfa1dae4bb50e9ea66a1e4\",\"dweb:/ipfs/QmPXyQNRx9X9AhWTpe6BKhU2ZptrV6cERBuhMbNKquHsa3\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b506000805460ff196101003302166001600160a81b03199091161790556102548061003c6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635f49d3d8146100465780638da5cb5b1461006f578063ef8a92351461009f575b600080fd5b61005961005436600461018f565b6100b9565b60405161006691906101a8565b60405180910390f35b6000546100879061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610066565b6000546100ac9060ff1681565b60405161006691906101f6565b60008054600160ff19909116178082556040516060929182916101009091046001600160a01b03169085908381818185875af1925050503d806000811461011c576040519150601f19603f3d011682016040523d82523d6000602084013e610121565b606091505b5091509150600161013157600080fd5b60408051338152602081018690527fba951166d42eb077151bdecb7cf6027562f04f0143b0c141b1bb0a33eef5d693910160405180910390a15050604080518082019091526006815265109bdbdad95960d21b602082015292915050565b6000602082840312156101a157600080fd5b5035919050565b600060208083528351808285015260005b818110156101d5578581018301518582016040015282016101b9565b506000604082860101526040601f19601f8301168501019250505092915050565b602081016002831061021857634e487b7160e01b600052602160045260246000fd5b9190529056fea2646970667358221220d38c1d671d2d2134911cbbad200bf7ac22f0e5f257cfa4fa0e9710f04fce356d64736f6c63430008110033",
+    "deployedBytecode": "608060405234801561001057600080fd5b50600436106100415760003560e01c80635f49d3d8146100465780638da5cb5b1461006f578063ef8a92351461009f575b600080fd5b61005961005436600461018f565b6100b9565b60405161006691906101a8565b60405180910390f35b6000546100879061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610066565b6000546100ac9060ff1681565b60405161006691906101f6565b60008054600160ff19909116178082556040516060929182916101009091046001600160a01b03169085908381818185875af1925050503d806000811461011c576040519150601f19603f3d011682016040523d82523d6000602084013e610121565b606091505b5091509150600161013157600080fd5b60408051338152602081018690527fba951166d42eb077151bdecb7cf6027562f04f0143b0c141b1bb0a33eef5d693910160405180910390a15050604080518082019091526006815265109bdbdad95960d21b602082015292915050565b6000602082840312156101a157600080fd5b5035919050565b600060208083528351808285015260005b818110156101d5578581018301518582016040015282016101b9565b506000604082860101526040601f19601f8301168501019250505092915050565b602081016002831061021857634e487b7160e01b600052602160045260246000fd5b9190529056fea2646970667358221220d38c1d671d2d2134911cbbad200bf7ac22f0e5f257cfa4fa0e9710f04fce356d64736f6c63430008110033",
+    "sourceMap": "94:1233:0:-:0;;;277:98;;;;;;;;;-1:-1:-1;300:5:0;:27;;-1:-1:-1;;300:27:0;316:10;300:27;337:31;-1:-1:-1;;;;;;337:31:0;;;;;;94:1233;;;;;;",
+    "deployedSourceMap": "94:1233:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1020:305;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;242:28;;;;;;;;-1:-1:-1;;;;;242:28:0;;;;;;-1:-1:-1;;;;;932:32:1;;;914:51;;902:2;887:18;242:28:0;752:219:1;155:29:0;;;;;;;;;;;;;;;;:::i;1020:305::-;1090:13;:33;;1106:17;-1:-1:-1;;1090:33:0;;;;;;;1203:27;;1066:13;;1090;;;1203:5;;;;-1:-1:-1;;;;;1203:5:0;;1220;;1090:13;1203:27;1090:13;1203:27;1220:5;1203;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1170:60;;;;1248:4;1240:13;;;;;;1269:24;;;1276:10;1835:51:1;;1917:2;1902:18;;1895:34;;;1269:24:0;;1808:18:1;1269:24:0;;;;;;;-1:-1:-1;;1303:15:0;;;;;;;;;;;;-1:-1:-1;;;1303:15:0;;;;;1020:305;-1:-1:-1;;1020:305:0:o;14:180:1:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:1;;14:180;-1:-1:-1;14:180:1:o;199:548::-;311:4;340:2;369;358:9;351:21;401:6;395:13;444:6;439:2;428:9;424:18;417:34;469:1;479:140;493:6;490:1;487:13;479:140;;;588:14;;;584:23;;578:30;554:17;;;573:2;550:26;543:66;508:10;;479:140;;;483:3;668:1;663:2;654:6;643:9;639:22;635:31;628:42;738:2;731;727:7;722:2;714:6;710:15;706:29;695:9;691:45;687:54;679:62;;;;199:548;;;;:::o;1108:338::-;1250:2;1235:18;;1283:1;1272:13;;1262:144;;1328:10;1323:3;1319:20;1316:1;1309:31;1363:4;1360:1;1353:15;1391:4;1388:1;1381:15;1262:144;1415:25;;;1108:338;:::o",
+    "sourcePath": "c:/Users/Deepak Prakash/source/repos/CSE6324-Smart-Contracts/NethereumPOC/NethereumPOC/Contracts/Hotel/hotelBooking.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.17+commit.8df45f5f"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/Deepak Prakash/source/repos/CSE6324-Smart-Contracts/NethereumPOC/NethereumPOC/Contracts/Hotel/hotelBooking.sol",
+        "exportedSymbols": {
+            "HotelRoom": [
+                95
+            ]
+        },
+        "id": 96,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "69:23:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "HotelRoom",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 95,
+                "linearizedBaseContracts": [
+                    95
+                ],
+                "name": "HotelRoom",
+                "nameLocation": "103:9:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "canonicalName": "HotelRoom.Statuses",
+                        "id": 4,
+                        "members": [
+                            {
+                                "id": 2,
+                                "name": "Vacant",
+                                "nameLocation": "133:6:0",
+                                "nodeType": "EnumValue",
+                                "src": "133:6:0"
+                            },
+                            {
+                                "id": 3,
+                                "name": "Occupied",
+                                "nameLocation": "141:8:0",
+                                "nodeType": "EnumValue",
+                                "src": "141:8:0"
+                            }
+                        ],
+                        "name": "Statuses",
+                        "nameLocation": "123:8:0",
+                        "nodeType": "EnumDefinition",
+                        "src": "118:32:0"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "ef8a9235",
+                        "id": 7,
+                        "mutability": "mutable",
+                        "name": "currentStatus",
+                        "nameLocation": "171:13:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 95,
+                        "src": "155:29:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Statuses_$4",
+                            "typeString": "enum HotelRoom.Statuses"
+                        },
+                        "typeName": {
+                            "id": 6,
+                            "nodeType": "UserDefinedTypeName",
+                            "pathNode": {
+                                "id": 5,
+                                "name": "Statuses",
+                                "nameLocations": [
+                                    "155:8:0"
+                                ],
+                                "nodeType": "IdentifierPath",
+                                "referencedDeclaration": 4,
+                                "src": "155:8:0"
+                            },
+                            "referencedDeclaration": 4,
+                            "src": "155:8:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_Statuses_$4",
+                                "typeString": "enum HotelRoom.Statuses"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "anonymous": false,
+                        "eventSelector": "ba951166d42eb077151bdecb7cf6027562f04f0143b0c141b1bb0a33eef5d693",
+                        "id": 13,
+                        "name": "Occupy",
+                        "nameLocation": "197:6:0",
+                        "nodeType": "EventDefinition",
+                        "parameters": {
+                            "id": 12,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 9,
+                                    "indexed": false,
+                                    "mutability": "mutable",
+                                    "name": "_occupant",
+                                    "nameLocation": "212:9:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 13,
+                                    "src": "204:17:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 8,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "204:7:0",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 11,
+                                    "indexed": false,
+                                    "mutability": "mutable",
+                                    "name": "_value",
+                                    "nameLocation": "228:6:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 13,
+                                    "src": "223:11:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 10,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "223:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "203:32:0"
+                        },
+                        "src": "191:45:0"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "8da5cb5b",
+                        "id": 15,
+                        "mutability": "mutable",
+                        "name": "owner",
+                        "nameLocation": "265:5:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 95,
+                        "src": "242:28:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                        },
+                        "typeName": {
+                            "id": 14,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "242:15:0",
+                            "stateMutability": "payable",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 31,
+                            "nodeType": "Block",
+                            "src": "290:85:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 24,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 18,
+                                            "name": "owner",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 15,
+                                            "src": "300:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address_payable",
+                                                "typeString": "address payable"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "arguments": [
+                                                {
+                                                    "expression": {
+                                                        "id": 21,
+                                                        "name": "msg",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 4294967281,
+                                                        "src": "316:3:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_magic_message",
+                                                            "typeString": "msg"
+                                                        }
+                                                    },
+                                                    "id": 22,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "320:6:0",
+                                                    "memberName": "sender",
+                                                    "nodeType": "MemberAccess",
+                                                    "src": "316:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_address",
+                                                        "typeString": "address"
+                                                    }
+                                                }
+                                            ],
+                                            "expression": {
+                                                "argumentTypes": [
+                                                    {
+                                                        "typeIdentifier": "t_address",
+                                                        "typeString": "address"
+                                                    }
+                                                ],
+                                                "id": 20,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "lValueRequested": false,
+                                                "nodeType": "ElementaryTypeNameExpression",
+                                                "src": "308:8:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_address_payable_$",
+                                                    "typeString": "type(address payable)"
+                                                },
+                                                "typeName": {
+                                                    "id": 19,
+                                                    "name": "address",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "308:8:0",
+                                                    "stateMutability": "payable",
+                                                    "typeDescriptions": {}
+                                                }
+                                            },
+                                            "id": 23,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "kind": "typeConversion",
+                                            "lValueRequested": false,
+                                            "nameLocations": [],
+                                            "names": [],
+                                            "nodeType": "FunctionCall",
+                                            "src": "308:19:0",
+                                            "tryCall": false,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address_payable",
+                                                "typeString": "address payable"
+                                            }
+                                        },
+                                        "src": "300:27:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address_payable",
+                                            "typeString": "address payable"
+                                        }
+                                    },
+                                    "id": 25,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "300:27:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 29,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 26,
+                                            "name": "currentStatus",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 7,
+                                            "src": "337:13:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_enum$_Statuses_$4",
+                                                "typeString": "enum HotelRoom.Statuses"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 27,
+                                                "name": "Statuses",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4,
+                                                "src": "353:8:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_enum$_Statuses_$4_$",
+                                                    "typeString": "type(enum HotelRoom.Statuses)"
+                                                }
+                                            },
+                                            "id": 28,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "lValueRequested": false,
+                                            "memberLocation": "362:6:0",
+                                            "memberName": "Vacant",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 2,
+                                            "src": "353:15:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_enum$_Statuses_$4",
+                                                "typeString": "enum HotelRoom.Statuses"
+                                            }
+                                        },
+                                        "src": "337:31:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_enum$_Statuses_$4",
+                                            "typeString": "enum HotelRoom.Statuses"
+                                        }
+                                    },
+                                    "id": 30,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "337:31:0"
+                                }
+                            ]
+                        },
+                        "id": 32,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nameLocation": "-1:-1:-1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 16,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "288:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 17,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "290:0:0"
+                        },
+                        "scope": 95,
+                        "src": "277:98:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 43,
+                            "nodeType": "Block",
+                            "src": "407:91:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_enum$_Statuses_$4",
+                                                    "typeString": "enum HotelRoom.Statuses"
+                                                },
+                                                "id": 38,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "id": 35,
+                                                    "name": "currentStatus",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 7,
+                                                    "src": "425:13:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_enum$_Statuses_$4",
+                                                        "typeString": "enum HotelRoom.Statuses"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "==",
+                                                "rightExpression": {
+                                                    "expression": {
+                                                        "id": 36,
+                                                        "name": "Statuses",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 4,
+                                                        "src": "442:8:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_type$_t_enum$_Statuses_$4_$",
+                                                            "typeString": "type(enum HotelRoom.Statuses)"
+                                                        }
+                                                    },
+                                                    "id": 37,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "451:6:0",
+                                                    "memberName": "Vacant",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 2,
+                                                    "src": "442:15:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_enum$_Statuses_$4",
+                                                        "typeString": "enum HotelRoom.Statuses"
+                                                    }
+                                                },
+                                                "src": "425:32:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "43757272656e746c79204f636375706965642e",
+                                                "id": 39,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "458:21:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_66ac814891755b70c57a2db6f76de0afcecc112d2c7ec539db27140ed9b36120",
+                                                    "typeString": "literal_string \"Currently Occupied.\""
+                                                },
+                                                "value": "Currently Occupied."
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_66ac814891755b70c57a2db6f76de0afcecc112d2c7ec539db27140ed9b36120",
+                                                    "typeString": "literal_string \"Currently Occupied.\""
+                                                }
+                                            ],
+                                            "id": 34,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "417:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 40,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "417:63:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 41,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "417:63:0"
+                                },
+                                {
+                                    "id": 42,
+                                    "nodeType": "PlaceholderStatement",
+                                    "src": "490:1:0"
+                                }
+                            ]
+                        },
+                        "id": 44,
+                        "name": "onlyWhileVacant",
+                        "nameLocation": "390:15:0",
+                        "nodeType": "ModifierDefinition",
+                        "parameters": {
+                            "id": 33,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "405:2:0"
+                        },
+                        "src": "381:117:0",
+                        "virtual": false,
+                        "visibility": "internal"
+                    },
+                    {
+                        "body": {
+                            "id": 57,
+                            "nodeType": "Block",
+                            "src": "531:116:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 52,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "expression": {
+                                                        "id": 49,
+                                                        "name": "msg",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 4294967281,
+                                                        "src": "549:3:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_magic_message",
+                                                            "typeString": "msg"
+                                                        }
+                                                    },
+                                                    "id": 50,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "553:5:0",
+                                                    "memberName": "value",
+                                                    "nodeType": "MemberAccess",
+                                                    "src": "549:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": ">=",
+                                                "rightExpression": {
+                                                    "id": 51,
+                                                    "name": "_amount",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 46,
+                                                    "src": "562:7:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "549:20:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "4e6f7420656e6f7567682065746865722070726f7669646564",
+                                                "id": 53,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "570:27:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_f324d702326190ee127f619a13854cf5a9a3a09df1d2eefc00b61826d440337d",
+                                                    "typeString": "literal_string \"Not enough ether provided\""
+                                                },
+                                                "value": "Not enough ether provided"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_f324d702326190ee127f619a13854cf5a9a3a09df1d2eefc00b61826d440337d",
+                                                    "typeString": "literal_string \"Not enough ether provided\""
+                                                }
+                                            ],
+                                            "id": 48,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "541:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 54,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "541:57:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 55,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "541:57:0"
+                                },
+                                {
+                                    "id": 56,
+                                    "nodeType": "PlaceholderStatement",
+                                    "src": "639:1:0"
+                                }
+                            ]
+                        },
+                        "id": 58,
+                        "name": "cost",
+                        "nameLocation": "513:4:0",
+                        "nodeType": "ModifierDefinition",
+                        "parameters": {
+                            "id": 47,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 46,
+                                    "mutability": "mutable",
+                                    "name": "_amount",
+                                    "nameLocation": "523:7:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 58,
+                                    "src": "518:12:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 45,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "518:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "517:14:0"
+                        },
+                        "src": "504:143:0",
+                        "virtual": false,
+                        "visibility": "internal"
+                    },
+                    {
+                        "body": {
+                            "id": 93,
+                            "nodeType": "Block",
+                            "src": "1080:245:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 68,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 65,
+                                            "name": "currentStatus",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 7,
+                                            "src": "1090:13:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_enum$_Statuses_$4",
+                                                "typeString": "enum HotelRoom.Statuses"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "id": 66,
+                                                "name": "Statuses",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4,
+                                                "src": "1106:8:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_enum$_Statuses_$4_$",
+                                                    "typeString": "type(enum HotelRoom.Statuses)"
+                                                }
+                                            },
+                                            "id": 67,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "lValueRequested": false,
+                                            "memberLocation": "1115:8:0",
+                                            "memberName": "Occupied",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 3,
+                                            "src": "1106:17:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_enum$_Statuses_$4",
+                                                "typeString": "enum HotelRoom.Statuses"
+                                            }
+                                        },
+                                        "src": "1090:33:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_enum$_Statuses_$4",
+                                            "typeString": "enum HotelRoom.Statuses"
+                                        }
+                                    },
+                                    "id": 69,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1090:33:0"
+                                },
+                                {
+                                    "assignments": [
+                                        71,
+                                        73
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 71,
+                                            "mutability": "mutable",
+                                            "name": "sent",
+                                            "nameLocation": "1176:4:0",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 93,
+                                            "src": "1171:9:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            },
+                                            "typeName": {
+                                                "id": 70,
+                                                "name": "bool",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "1171:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        },
+                                        {
+                                            "constant": false,
+                                            "id": 73,
+                                            "mutability": "mutable",
+                                            "name": "data",
+                                            "nameLocation": "1195:4:0",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 93,
+                                            "src": "1182:17:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "memory",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes_memory_ptr",
+                                                "typeString": "bytes"
+                                            },
+                                            "typeName": {
+                                                "id": 72,
+                                                "name": "bytes",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "1182:5:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bytes_storage_ptr",
+                                                    "typeString": "bytes"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 80,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "hexValue": "",
+                                                "id": 78,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1227:2:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                    "typeString": "literal_string \"\""
+                                                },
+                                                "value": ""
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                    "typeString": "literal_string \"\""
+                                                }
+                                            ],
+                                            "expression": {
+                                                "argumentTypes": [
+                                                    {
+                                                        "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                        "typeString": "literal_string \"\""
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "id": 74,
+                                                    "name": "owner",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 15,
+                                                    "src": "1203:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_address_payable",
+                                                        "typeString": "address payable"
+                                                    }
+                                                },
+                                                "id": 75,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "1209:4:0",
+                                                "memberName": "call",
+                                                "nodeType": "MemberAccess",
+                                                "src": "1203:10:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
+                                                    "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                                                }
+                                            },
+                                            "id": 77,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "names": [
+                                                "value"
+                                            ],
+                                            "nodeType": "FunctionCallOptions",
+                                            "options": [
+                                                {
+                                                    "id": 76,
+                                                    "name": "value",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 60,
+                                                    "src": "1220:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                }
+                                            ],
+                                            "src": "1203:23:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value",
+                                                "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                                            }
+                                        },
+                                        "id": 79,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1203:27:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
+                                            "typeString": "tuple(bool,bytes memory)"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "1170:60:0"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "hexValue": "74727565",
+                                                "id": 82,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "bool",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1248:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                "value": "true"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            ],
+                                            "id": 81,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "1240:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                                                "typeString": "function (bool) pure"
+                                            }
+                                        },
+                                        "id": 83,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1240:13:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 84,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1240:13:0"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 86,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "1276:3:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 87,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "1280:6:0",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "1276:10:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "id": 88,
+                                                "name": "value",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 60,
+                                                "src": "1287:5:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "id": 85,
+                                            "name": "Occupy",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 13,
+                                            "src": "1269:6:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                                                "typeString": "function (address,uint256)"
+                                            }
+                                        },
+                                        "id": 89,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1269:24:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 90,
+                                    "nodeType": "EmitStatement",
+                                    "src": "1264:29:0"
+                                },
+                                {
+                                    "expression": {
+                                        "hexValue": "426f6f6b6564",
+                                        "id": 91,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": true,
+                                        "kind": "string",
+                                        "lValueRequested": false,
+                                        "nodeType": "Literal",
+                                        "src": "1310:8:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_stringliteral_c53a664499adc2faa5f87eb8b22ba89653122f1755d070c98608f757471a9590",
+                                            "typeString": "literal_string \"Booked\""
+                                        },
+                                        "value": "Booked"
+                                    },
+                                    "functionReturnParameters": 64,
+                                    "id": 92,
+                                    "nodeType": "Return",
+                                    "src": "1303:15:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "5f49d3d8",
+                        "id": 94,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "bookRoom",
+                        "nameLocation": "1029:8:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 61,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 60,
+                                    "mutability": "mutable",
+                                    "name": "value",
+                                    "nameLocation": "1043:5:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 94,
+                                    "src": "1038:10:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 59,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1038:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1037:12:0"
+                        },
+                        "returnParameters": {
+                            "id": 64,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 63,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 94,
+                                    "src": "1066:13:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 62,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1066:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1065:15:0"
+                        },
+                        "scope": 95,
+                        "src": "1020:305:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 96,
+                "src": "94:1233:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "69:1258:0"
+    },
+    "functionHashes": {
+        "bookRoom(uint256)": "5f49d3d8",
+        "currentStatus()": "ef8a9235",
+        "owner()": "8da5cb5b"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "119200",
+            "executionCost": "24423",
+            "totalCost": "143623"
+        },
+        "external": {
+            "bookRoom(uint256)": "infinite",
+            "currentStatus()": "2373",
+            "owner()": "2348"
+        }
+    }
+}
