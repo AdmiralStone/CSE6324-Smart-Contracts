@@ -1,0 +1,693 @@
+﻿@model NethereumWebUI.Models.ToDoListModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .file-upload {
+        background-color: #ffffff;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .file-upload-btn {
+        width: 100%;
+        margin: 0;
+        color: #fff;
+        /*background: #1FB264;*/
+        background: #7571f9;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        /*border-bottom: 4px solid #15824B;*/
+        /*border-bottom: 4px solid #7571f9;*/
+        transition: all .2s ease;
+        outline: none;
+        /*text-transform: uppercase;*/
+        font-weight: 700;
+    }
+
+        .file-upload-btn:hover {
+            /*background: #1AA059;*/
+            background: #324cdd;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .file-upload-btn:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+
+    .file-upload-content {
+        display: none;
+        text-align: center;
+    }
+
+    .file-upload-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .image-upload-wrap {
+        margin-top: 20px;
+        /*border: 4px dashed #1FB264;*/
+        border: 4px dashed #76838f;
+        position: relative;
+    }
+
+        .image-dropping,
+        .image-upload-wrap:hover {
+            /*background-color: #1FB264;*/
+            background-color: #76838f;
+            border: 4px dashed #ffffff;
+        }
+
+    .image-title-wrap {
+        padding: 0 15px 15px 15px;
+        color: #222;
+    }
+
+    .drag-text {
+        text-align: center;
+        height: 75px;
+    }
+
+        .drag-text h3 {
+            font-weight: 100;
+            /*text-transform: uppercase;*/
+            color: #15824B;
+            /*padding: 60px 0;*/
+            padding: 25px 0;
+        }
+
+    .file-upload-image {
+        max-height: 200px;
+        max-width: 200px;
+        margin: auto;
+        /*padding: 20px;*/
+        padding: 0px;
+    }
+
+    .remove-image {
+        width: 200px;
+        margin: 0;
+        color: #fff;
+        background: #cd4535;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        border-bottom: 4px solid #b02818;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+        .remove-image:hover {
+            background: #c13b2a;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .remove-image:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+    /*    .tdl-holder input[type=checkbox]:checked + i::after {
+            content: "\f00c";
+            font-family: 'fontAwesome';
+            display: block;
+            left: 1px;
+            position: absolute;
+            top: 17px;
+            z-index: 2;
+            color: #162336
+        }*/
+    /* .fake-input {
+            float: left;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #9f9f9f;
+            background: #fff;
+            vertical-align: middle;
+            position: relative;
+            margin-right: 10px;
+            border-radius: 4px;
+        }*/
+    /*
+        input[type="checkbox"] {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+        }*/
+
+    /*input[type="checkbox"]:checked + .fake-input:before {
+                content: "\2713";
+                position: absolute;
+                color: red;
+                text-align: center;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }*/
+    /* input[type="checkbox"] {
+            display: none;
+        }*/
+
+    /* input[type="checkbox"]*/
+    .myChkBox {
+        float: left;
+        /*width: 20px;*/
+        height: 20px;
+        border: 1px solid #9f9f9f;
+        background: #fff;
+        vertical-align: middle;
+        position: relative;
+        margin-right: 10px;
+        border-radius: 4px;
+        display: block;
+    }
+
+    input[type="checkbox"]:checked:after {
+        content: '✔';
+        display: inline-block;
+        font-size: 1.6em;
+        position: absolute;
+    }
+</style>
+
+<div class="row page-titles mx-0">
+    <div class="col p-md-0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Dashboard</li>
+            <li class="breadcrumb-item active">Smart Contract</li>
+        </ol>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <span class="display-5"><img src="~/Images/Logo/Ethereum-Icon-Purple-Logo.wine.svg" style="height:100px;width:120px" /></span>
+                        <h2 class="mt-3">Ethereum</h2>
+                        <p>Ethereum is a decentralized, open-source blockchain with smart contract functionality.</p><a href="https://en.wikipedia.org/wiki/Ethereum" target="_blank" class="btn gradient-3 btn-lg border-0 btn-rounded px-5">
+                            Know
+                            More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card-widget">
+                <div class="card-body">
+                    <h5 class="text-muted">Total Tests</h5>
+                    <span style="float:right">
+                        <img src="~/Images/Logo/pie-chart.png" style="height:45px;width:45px;cursor:pointer" />
+                    </span>
+                    <h2 class="mt-4">10</h2>
+                    <div class="mt-4">
+                        <h6>Passed <span class="pull-right">50%</span></h6>
+                        <div class="progress mb-3" style="height: 7px">
+                            <div class="progress-bar gradient-1" style="width: 50%;" role="progressbar">
+                                <span class="sr-only">80% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="m-t-10 text-muted">Failed <span class="pull-right">50%</span></h6>
+                        <div class="progress mb-3" style="height: 7px">
+                            <div class="progress-bar gradient-3" style="width: 50%;" role="progressbar">
+                                <span class="sr-only">50% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="m-t-10 text-muted">Overall Outcome <span class="pull-right">50%</span></h6>
+                        <div class="progress mb-3" style="height: 7px">
+                            <div class="progress-bar gradient-4" style="width: 50%;" role="progressbar">
+                                <span class="sr-only">50% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h4>User To Do List:</h4>
+                        <ul style="margin-top:15px">
+                            @foreach (var item in Model.toDoLists)
+                            {
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"
+                                               name="@item.Description"
+                                               id="@item.ToDoId"
+                                               value="@item.Description"
+                                               class="myChkBox"
+                                               @if (item.Task) {
+                                        <text> checked </text>
+                                        } />
+
+                                            <label for="@item.ToDoId" style="margin-left: 5px">
+                                                @item.Description
+                                            </label>
+                                        </label>
+                                    </div>
+
+                                </li>
+                            }
+
+                            <li>
+                                <a class="text-center d-block text-muted" href="javascript:void()">
+                                    <img src="~/Images/Logo/tasks.png" style="height:30px;width:35px" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Upload File:</h3>
+                    <div class="file-upload">
+                        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add File</button>
+                        @using (Html.BeginForm("SaveContract", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="image-upload-wrap">
+                                <input class="file-upload-input" type='file' name="file" onchange="readURL(this);" accept="image/*" />
+                                <div class="drag-text">
+                                    <h3 style="color:#222222">Drag and Drop a File <i class="fa-regular fa-cloud-arrow-up"></i></h3>
+                                </div>
+                            </div>
+                            <span></span>
+                            <input type="submit" value="Upload" class="btn mb-1 btn-rounded btn-success btn-icon-left" style="float:right;margin-top:30px;width:150px" />
+                        }
+
+                        <div class="file-upload-content">
+                            <img src="~/Images/Logo/ether.png" style="height:35px;width:45px" />
+                            <div class="image-title-wrap" style="margin-top:20px">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">File Details:</h4>
+                    <div style="width:90%; margin:0 auto;">
+                        <a data-toggle="modal" data-target="#EditModal" id="addFile" style="display:none">
+                            <div class="btn btn-primary" style="cursor:pointer">Add</div>
+                        </a>
+
+                        <table id="etherGrid" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="margin-top:20px">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>File Name</th>
+                                    <th>Size</th>
+                                    <th>Type</th>
+                                    <th>Uploaded By</th>
+                                    <th>Modified On</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Static Testing</h4>
+                    <div id="flotBar1" class="flot-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Dynamic Testing</h4>
+                    <div id="flotBar2" class="flot-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Results</h4>
+                    <div id="flotBar3" class="flot-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            @using (Html.BeginForm("", "", FormMethod.Post, new { id = "editFormComponent" }))
+            {
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ether Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group col-lg-4" style="float:left">
+                                    <label>Message: </label>
+                                </div>
+                                <div class="form-group col-lg-8" style="float:left">
+                                    <span>Running Tests</span>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group col-lg-4" style="float:left">
+                    @Html.LabelFor(m => m.BranchCity)
+                    </div>
+                    <div class="form-group col-lg-8" style="float:left">
+                    @Html.TextBoxFor(m => m.BranchCity)
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group col-lg-4" style="float:left">
+                    @Html.LabelFor(m => m.Assets)
+                    </div>
+                    <div class="form-group col-lg-8" style="float:left">
+                    @Html.TextBoxFor(m => m.Assets)
+                    </div>
+                    </div>
+                    </div>*@
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+                        @*<button type="submit" class="btn btn-primary">Save changes</button>*@
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css" />
+<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+    anychart.onDocumentReady(function () {
+        var smallData = {
+            header: ["Algorithms", "Run Time"],
+            rows: [
+                ["Merge Sort", 0.28000],
+                ["Heap Sort", 0.33500],
+                ["Quick Sort", 0.27499],
+                ["3 Median Quick Sort", 0.17500],
+                ["Insertion Sort", 0.02999],
+                ["Selection Sort", 0.07999],
+                ["Bubble Sort", 0.02999]
+            ]
+        };
+
+        // create the chart
+        var chart = anychart.column();
+
+        // add the data
+        chart.data(smallData);
+
+        // set the chart title
+        chart.title("Static Test Input");
+
+        // draw
+        chart.container("flotBar1");
+
+        chart.draw();
+
+        //Large Input Data
+        var largeData = {
+            header: ["Algorithms", "Run Time"],
+            rows: [
+                ["Merge Sort", 0.11500],
+                ["Heap Sort", 0.11499],
+                ["Quick Sort", 0.06000],
+                ["3 Median Quick Sort", 0.08500],
+                ["Insertion Sort", 0.02500],
+                ["Selection Sort", 0.02999],
+                ["Bubble Sort", 0.03500]
+            ]
+        };
+
+        // create the chart
+        var chart = anychart.column();
+
+        // add the data
+        chart.data(largeData);
+        chart.title("Dynamic Test Input");
+
+        chart.container("flotBar2")
+        chart.draw();
+
+        //Very Large Input Data
+        var vryLargeData = {
+            header: ["Algorithms", "Run Time"],
+            rows: [
+                ["Merge Sort", 0.28000, 0.11500, 0.54999],
+                ["Heap Sort", 0.33500, 0.11499, 0.17499],
+                ["Quick Sort", 0.27499, 0.06000, 0.09999],
+                ["3 Median Quick Sort", 0.17500, 0.08500, 0.20500],
+                ["Insertion Sort", 0.02999, 0.02500, 0.15999],
+                ["Selection Sort", 0.07999, 0.02999, 0.11000],
+                ["Bubble Sort", 0.02999, 0.03500, 0.21500]
+            ]
+        };
+
+        // create the chart
+        var chart = anychart.column();
+
+        // add the data
+        chart.data(vryLargeData);
+        chart.title("Static and Dynamic Test Input");
+
+        chart.container("flotBar3")
+        chart.draw();
+    });
+
+    function readURL(input) {
+        debugger
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                //debugger;
+                var fileType = input.files[0].name.split('.').pop();
+                if (fileType != "jpg") {
+                    alert("Invalid File Type");
+                    //event.preventDefault();
+                    return;
+                }
+                $('.image-upload-wrap').hide();
+
+                $('.file-upload-image').attr('src', e.target.result);
+                $('.file-upload-content').show();
+
+                $('.image-title').html(input.files[0].name);
+
+
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        else {
+            removeUpload();
+        }
+    }
+
+    function removeUpload() {
+        debugger;
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+        location.reload();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+        //debugger;
+        $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function () {
+        //debugger;
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
+
+    $(document).ready(function () {
+        $.noConflict();
+        $('#etherGrid').DataTable({
+            "lengthChange": false,
+            "ajax": {
+                "url": "/Home/LoadData",
+                "type": "GET",
+                "datatype": "json",
+                "dataSrc": function(json) {
+                    return JSON.parse(json);
+                }
+            },
+            "bSort": false,
+            "columns": [
+                { "data": "FileId", render: getImg },
+                { "data": "FileName", "autoWidth": true },
+                { "data": "Size", "autoWidth": true },
+                { "data": "FileType", "autoWidth": true },
+                { "data": "UploadedBy", "autoWidth": true },
+                { "data": "ModifiedOn", "autoWidth": true },
+                {
+                    "render": function (data, type, full, meta) {
+                        return '<input name=\"editDetails\" type="submit" value="Run" class="btn mb-1 btn-rounded btn-success btn-icon-left" style="margin-left:5px;width:50px"><input name=\"delDetails\" type="submit" value="Delete"  class="btn mb-1 btn-flat btn-warning btn-success btn-icon-left" style="width:50px;margin-left:5px">';
+                    }
+                }
+            ]
+        });
+        $('#etherGrid').on('draw.dt', function () {
+            $("[name=\"editDetails\"]").click(gridEditEvent);
+            $("[name=\"delDetails\"]").click(gridDelEvent);
+        });
+    });
+    var gridEditEvent = function (event) {
+        debugger;
+        var rowData = $('#etherGrid').DataTable().row($(this).closest("tr")).data();
+        //alert("Running Tests");
+        document.getElementById("addFile").click();
+    }
+    var gridDelEvent = function (event) {
+        debugger;
+        var rowData = $('#etherGrid').DataTable().row($(this).closest("tr")).data();
+        //alert(rowData.FileId);
+
+        $.ajax({
+            url: '@Url.Action("DeleteContract", "Home")',
+            data: { Id: rowData.FileId },
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                debugger;
+                $('#etherGrid').DataTable().ajax.reload();
+            },
+            error: function (error) {
+                showErrorDialog(error.responseText, "");
+            }
+        });
+    }
+    function getImg(data, type, full, meta) {
+        //debugger;
+        return '<img src="../Images/Logo/Ethereum-Icon-Purple-Logo.wine.svg" style="height:30px;width:45px"/>';
+    }
+
+
+    $("#editFormComponent").submit(function (event) {
+        //debugger;
+        event.preventDefault();
+
+        //$("#editFormComponent").validate();
+        //    if (!$("#editFormComponent").valid()) {
+        //        return false;
+        //    }
+    @*var id = $('#BranchName').val();
+            var url = '@Url.Action("UpdateBankDetails", "Bank")';
+            if ($('#BranchName').val() == "" || $('#BranchName').val() == "-1") {
+            url = '@Url.Action("UpdateBankDetails", "Bank")';
+            }*@
+
+                //$.ajax({
+                //    url: url,
+                //    data: $("#editFormComponent").serializeArray(),
+                //    type: 'POST',
+                //    async: false,
+                //    success: function (data) {
+                //        debugger
+                //        //$('#EditModal').modal().hide();
+                //        $("#EditModal .close").click()
+                //        $('#bankGrid').DataTable().ajax.reload();
+                //        //$('#EditModal').modal('toggle');
+                //        //$('#EditModal').css("{display:none}");
+                //        //$('#bankGrid').DataTable().ajax.reload(attachGridEvent);
+                //        //$('#bankGrid').DataTable().ajax.reload();
+                //        //showInformationDialog(data);
+                //    }
+                //    //,
+                //    //error: function (error) {
+                //    //    $("#validationMessage").html(error.responseText);
+                //    //    $("#validationMessage").parent().parent().show();
+                //    //}
+                //});
+            });
+    $('#addFile').on('click', function () {
+        debugger
+        //    $("#BranchName").val("");
+        //    //$("#BranchName").readOnly = false;
+        //    document.getElementById('BranchName').removeAttribute('readonly');
+        //    $("#BranchName").css('background-color', '#ffff');
+        //    $("#BranchCity").val("");
+        //    $("#Assets").val("");
+        $('#exampleModalLabel').text("Ether Details")
+    });
+
+    $("input[type='checkbox']").change(function () {
+        debugger;
+        //var returnVal = confirm("Are you sure?");
+        //$(this).prop("checked", returnVal);
+        var id = $(this).val();
+        $.ajax({
+            url: '@Url.Action("UpdateToDoList", "Home")',
+            data: { Id: id },
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                debugger;
+                $('#etherGrid').DataTable().ajax.reload();
+            },
+            error: function (error) {
+                showErrorDialog(error.responseText, "");
+            }
+        });
+    });
+    function CheckBoxFunction(description) {
+        alert(description);
+    }
+</script>
