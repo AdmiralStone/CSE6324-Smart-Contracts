@@ -1,5 +1,3 @@
-# https://github.com/crytic/slither/pull/1392
-
 from slither.slithir.operations import (Binary,BinaryType)
 
 def uInt_comparisions(contract):
